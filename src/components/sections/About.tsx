@@ -1,5 +1,7 @@
 import React from "react";
 import { GraduationCap } from "lucide-react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 interface AboutProps {
   isDark: boolean;
@@ -12,7 +14,7 @@ interface StatItem {
 
 const About: React.FC<AboutProps> = ({ isDark }) => {
   const stats: StatItem[] = [
-    { number: "5+", label: "Years Experience" },
+    { number: "6+", label: "Years Experience" },
     { number: "50+", label: "Projects" },
     { number: "40%", label: "Performance Boost" },
     { number: "100%", label: "Satisfaction" },
@@ -77,9 +79,9 @@ const About: React.FC<AboutProps> = ({ isDark }) => {
                 isDark ? "text-gray-400" : "text-gray-600"
               } leading-relaxed`}
             >
-              With over 5 years of experience, I specialize in modern JavaScript
-              frameworks and full-stack development. Currently at NCSI
-              Technologies, I have engineered enterprise applications that
+              With over 6+ years of experience, I specialize in modern
+              JavaScript frameworks and full-stack development. Currently at
+              NCSI Technologies, I have engineered enterprise applications that
               improved performance by 40%.
             </p>
 
@@ -126,29 +128,42 @@ const About: React.FC<AboutProps> = ({ isDark }) => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className={`${
-                  isDark
-                    ? "bg-gray-800 border-gray-700 hover:border-orange-500"
-                    : "bg-white border-gray-900 hover:border-orange-500"
-                } p-10 rounded-3xl border-4 transition-all duration-300 hover:-translate-y-3 shadow-lg hover:shadow-2xl`}
-              >
-                <div className="text-5xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-3">
-                  {stat.number}
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+            {stats.map((stat, index) => {
+              const { ref, inView } = useInView({
+                triggerOnce: true, // run animation only once
+                threshold: 0.3, // start when 30% visible
+              });
 
+              return (
                 <div
+                  key={index}
+                  ref={ref}
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-700"
-                  } font-bold text-lg uppercase tracking-wide`}
+                    isDark
+                      ? "bg-gray-800 border-gray-700 hover:border-orange-500"
+                      : "bg-white border-gray-900 hover:border-orange-500"
+                  } p-10 rounded-3xl border-4 transition-all duration-300 hover:-translate-y-3 shadow-lg hover:shadow-2xl`}
                 >
-                  {stat.label}
+                  <div className="text-5xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-3">
+                    {inView ? (
+                      <CountUp end={parseInt(stat.number)} duration={2} />
+                    ) : (
+                      "0"
+                    )}
+                    +
+                  </div>
+
+                  <div
+                    className={`${
+                      isDark ? "text-gray-400" : "text-gray-700"
+                    } font-bold text-lg uppercase tracking-wide`}
+                  >
+                    {stat.label}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

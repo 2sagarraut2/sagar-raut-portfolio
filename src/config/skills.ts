@@ -1,13 +1,13 @@
 export const skillCategories = [
   {
     title: 'Frontend',
-    icon: 'Code',
+    icon: 'MonitorSmartphone',
     skills: ['React.js', 'Next.js', 'TypeScript', 'Redux', 'Tailwind CSS', 'Material UI']
   },
   {
     title: 'Backend',
     icon: 'Server',
-    skills: ['Node.js', 'Express.js', 'NestJS', 'REST APIs', 'Microservices', 'WebSockets']
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'Microservices', 'WebSockets']
   },
   {
     title: 'Databases',
@@ -16,12 +16,12 @@ export const skillCategories = [
   },
   {
     title: 'Cloud & DevOps',
-    icon: 'Cloud',
+    icon: 'Cloudy',
     skills: ['AWS', 'Docker', 'CI/CD', 'GitHub Actions']
   },
   {
     title: 'Languages',
-    icon: 'Language',
+    icon: 'Braces',
     skills: ['C', 'C++', 'Java', 'JavaScript (ES6+)', 'TypeScript', 'SQL'],
   }
 ];

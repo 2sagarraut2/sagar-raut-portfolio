@@ -80,6 +80,7 @@ const Footer: React.FC<FooterProps> = ({ isDark }) => {
             } text-center md:text-left`}
           >
             <p className="font-bold">&copy; 2025 Sagar Raut. All rights reserved.</p>
+            <p >Made with ❤️ in India</p>
           </div>
         </div>
       </div>
