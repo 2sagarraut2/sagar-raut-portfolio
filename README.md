@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sagar Raut - Portfolio Website
+
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🎨 Bold, vibrant design inspired by modern web aesthetics
+- 🌓 Dark/Light theme toggle
+- 📱 Fully responsive
+- ⚡ Optimized performance
+- 🎭 Smooth animations
+- 📊 Project showcase
+- 💼 Work experience timeline
+- 📧 Contact section
+
+## Tech Stack
+
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Deployment:** Vercel (recommended)
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/2sagarraut2/sagar-raut-portfolio.git
+   cd sagar-raut-portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+   npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Run the development server**
 
-## Learn More
+```bash
+   npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Open** [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+sagar-raut-portfolio/
+├── public/          # Static assets
+├── src/
+│   ├── app/         # Next.js app directory
+│   ├── components/  # React components
+│   ├── config/      # Configuration files
+│   ├── hooks/       # Custom hooks
+│   └── types/       # TypeScript types
+```
 
-## Deploy on Vercel
+## Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Update personal information in `src/config/resume.ts`
+- Modify projects in `src/config/projects.ts`
+- Update skills in `src/config/skills.ts`
+- Add your images to `public/images/`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Deploy!
+
+### Other Platforms
+
+```bash
+npm run build
+npm start
+```
+
+## License
+
+MIT License - feel free to use this template for your own portfolio!
+
+## Contact
+
+- **Email:** 2sagarraut2@gmail.com
+- **LinkedIn:** (https://www.linkedin.com/in/2sagarraut2/)
+- **GitHub:** (https://github.com/2sagarraut2)
