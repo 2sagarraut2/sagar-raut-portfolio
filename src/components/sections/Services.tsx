@@ -1,7 +1,6 @@
 import React from "react";
-import { Sparkles, Zap, Target, Users } from "lucide-react";
-import { services } from '../../config/services';
-import * as Icons from "lucide-react";
+import { ICONS } from "../../config/icons";
+import { services } from "../../config/services";
 
 interface ServicesProps {
   isDark: boolean;
@@ -13,8 +12,13 @@ interface ServiceItem {
   description: string;
 }
 
-const Services: React.FC<ServicesProps> = ({ isDark }) => {
+type Service = {
+  title: string;
+  description: string;
+  icon: keyof typeof ICONS;
+};
 
+const Services: React.FC<ServicesProps> = ({ isDark }) => {
   return (
     <section
       id="services"
@@ -50,42 +54,44 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
 
         {/* Service Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => { 
-            const Icon = Icons[service.icon as keyof typeof Icons];
-          return(
-            <div
-              key={index}
-              className={`${
-                isDark
-                  ? "bg-gray-800 border-gray-700 hover:border-orange-500"
-                  : "bg-gradient-to-br from-orange-50 to-pink-50 border-gray-900 hover:border-orange-500"
-              } p-10 rounded-3xl border-4 transition-all duration-300 hover:-translate-y-3 shadow-lg hover:shadow-2xl group`}
-            >
+          {services.map((service, index) => {
+            const Icon = ICONS[service.icon];
+
+            return (
               <div
+                key={index}
                 className={`${
-                  isDark ? "text-orange-400" : "text-orange-500"
-                } mb-8 group-hover:scale-110 transition-transform`}
+                  isDark
+                    ? "bg-gray-800 border-gray-700 hover:border-orange-500"
+                    : "bg-gradient-to-br from-orange-50 to-pink-50 border-gray-900 hover:border-orange-500"
+                } p-10 rounded-3xl border-4 transition-all duration-300 hover:-translate-y-3 shadow-lg hover:shadow-2xl group`}
               >
-                {Icon && <Icon size={56} strokeWidth={2.5} />}
+                <div
+                  className={`${
+                    isDark ? "text-orange-400" : "text-orange-500"
+                  } mb-8 group-hover:scale-110 transition-transform`}
+                >
+                  <Icon size={56} strokeWidth={2.5} />
+                </div>
+
+                <h3
+                  className={`text-2xl font-black ${
+                    isDark ? "text-white" : "text-gray-900"
+                  } mb-4 uppercase tracking-tight`}
+                >
+                  {service.title}
+                </h3>
+
+                <p
+                  className={`${
+                    isDark ? "text-gray-300" : "text-gray-700"
+                  } leading-relaxed font-medium text-lg`}
+                >
+                  {service.description}
+                </p>
               </div>
-
-              <h3
-                className={`text-2xl font-black ${
-                  isDark ? "text-white" : "text-gray-900"
-                } mb-4 uppercase tracking-tight`}
-              >
-                {service.title}
-              </h3>
-
-              <p
-                className={`${
-                  isDark ? "text-gray-300" : "text-gray-700"
-                } leading-relaxed font-medium text-lg`}
-              >
-                {service.description}
-              </p>
-            </div>
-          )})}
+            );
+          })}
         </div>
       </div>
     </section>

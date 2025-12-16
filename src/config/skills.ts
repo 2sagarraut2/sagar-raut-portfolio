@@ -1,30 +1,38 @@
-export const skillCategories = [
+import type { IconName } from "./icons";
+
+export const skillCategories: {
+  title: string;
+  description?: string;
+  icon: IconName;
+  skills: string[];
+}[] = [
   {
-    title: 'Frontend',
-    icon: 'MonitorSmartphone',
-    skills: ['React.js', 'Next.js', 'TypeScript', 'Redux', 'Tailwind CSS', 'Material UI']
+    title: "Frontend",
+    icon: "MonitorSmartphone",
+    skills: ["React.js", "Next.js", "TypeScript", "Redux", "Tailwind CSS"],
   },
   {
-    title: 'Backend',
-    icon: 'Server',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'Microservices', 'WebSockets']
+    title: "Backend",
+    icon: "Server",
+    skills: ["Node.js", "Express.js", "REST APIs"],
   },
   {
-    title: 'Databases',
-    icon: 'Database',
-    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Mongoose', 'Query Optimization']
+    title: "Databases",
+    icon: "Database",
+    skills: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
-    title: 'Cloud & DevOps',
-    icon: 'Cloudy',
-    skills: ['AWS', 'Docker', 'CI/CD', 'GitHub Actions']
+    title: "Cloud & DevOps",
+    icon: "Cloudy",
+    skills: ["AWS", "Docker", "CI/CD"],
   },
   {
-    title: 'Languages',
-    icon: 'Braces',
-    skills: ['C', 'C++', 'Java', 'JavaScript (ES6+)', 'TypeScript', 'SQL'],
-  }
+    title: "Languages",
+    icon: "Braces",
+    skills: ["C", "C++", "Java", "JavaScript", "TypeScript"],
+  },
 ];
+
 
 export const allSkills = {
   languages: ['C', 'C++', 'Java', 'JavaScript (ES6+)', 'TypeScript', 'SQL'],

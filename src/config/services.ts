@@ -1,4 +1,10 @@
-export const services = [
+import type { IconName } from "./icons";
+
+export const services: {
+  title: string;
+  description: string;
+  icon: IconName;
+}[] = [
   {
     title: 'Full-Stack Development',
     icon: 'Sparkles',
