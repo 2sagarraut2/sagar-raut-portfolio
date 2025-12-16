@@ -30,7 +30,7 @@ export const projects = [
       title: "DEVTINDER",
       subtitle: "Social App",
       description:
-        "Full-stack social networking application with real-time messaging and JWT authentication.",
+        "A social networking application with real-time messaging and JWT authentication.",
       tech: ["React.js", "Node.js", "MongoDB", "WebSockets", "AWS EC2"],
       link: "https://github.com/2sagarraut2/devTinder",
       metrics: ["Real-time chat", "JWT Authentication & Authorization", "Profile Management"],

@@ -37,7 +37,7 @@ export const experiences = [
   {
     company: 'Alten Calsoft Labs Pvt. Ltd.',
     role: 'Service Desk L1 Engineer',
-    period: 'Jan 2018 - May 2018',
+    period: 'Jan 2019 - May 2019',
     location: 'Pune, India',
     highlights: [
       'Configured AD accounts',
